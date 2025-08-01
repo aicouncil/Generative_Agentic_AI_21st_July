@@ -1,0 +1,16 @@
+This document is a set of notes from a session on "Generative & Agentic AI - 22 July," held on July 30, 2025. The session, led by AI Council, covered the process of building a simple language model and its limitations, leading into a detailed explanation of the Transformer model.
+
+Here are the key takeaways from the notes:
+
+  * **Simple Language Model:** AI Council explained how a simple language model predicts the next word with 98% accuracy, using techniques like text preprocessing, tokenization, and one-hot encoding. They demonstrated how the model generates continuous sequences of words.
+  * **Limitations of Simple Models:** A significant limitation identified was the simple model's inability to handle large-scale data due to "forgetting" information, as the number of possible next words increases dramatically with larger datasets.
+  * **Introduction to the Transformer Model:** The Transformer model was introduced as a revolutionary solution for large-scale sequential and language data, originating from the "Attention All You Need" research paper (around 2017). It's the foundation for many modern large language models (LLMs).
+  * **Transformer Functionality:** A Transformer is an AI model designed to understand and generate human languages. Its core mechanism is "attention," which allows it to prioritize important words and understand their relationships within a sequence, similar to human reading comprehension.
+  * **Encoder-Decoder Architecture:** The Transformer consists of an encoder (for deep analysis of input) and a decoder (for generating output sequences).
+  * **Encoder Block Components:** The encoder block includes input embedding, positional encoding (crucial for understanding word order as Transformers process words simultaneously), multi-head self-attention, add and normalization layers, and a feed-forward network.
+  * **Decoder Block Components:** The decoder block also uses output embedding and positional encoding. A key difference is "masked multi-head self-attention," which ensures the decoder generates words sequentially based only on previously generated words. It also includes add and normalization layers, encoder-decoder attention (where the encoder's context joins the decoder), and a feed-forward network, concluding with a Softmax activation function for output probabilities.
+  * **Self-Attention Mechanism:** This mechanism helps the model learn relationships between words in a sequence by identifying which words are important in a given context.
+  * **Softmax Activation Function:** Used in the final output layer, Softmax scales neuron values to a range of 0 to 1, aiding in error optimization and determining the probability of each word, allowing the decoder to choose the most likely next word.
+  * **Overall Transformer Summary:** The Transformer architecture involves tokenization and embedding, positional encoding, an encoder to understand the input sentence, a decoder to generate output word by word using input context, and a final output layer to predict the best word.
+
+The notes also mention that future sessions will delve deeper into the mathematical workings of self-attention and multi-head attention.
