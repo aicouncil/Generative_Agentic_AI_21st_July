@@ -1,16 +1,20 @@
-This document is a set of notes from a session on "Generative & Agentic AI - 22 July," held on July 30, 2025. The session, led by AI Council, covered the process of building a simple language model and its limitations, leading into a detailed explanation of the Transformer model.
+This document is a summary of the "Generative & Agentic AI - 22 July" meeting from July 31, 2025.
 
-Here are the key takeaways from the notes:
+**Key topics covered by AI Council:**
 
-  * **Simple Language Model:** AI Council explained how a simple language model predicts the next word with 98% accuracy, using techniques like text preprocessing, tokenization, and one-hot encoding. They demonstrated how the model generates continuous sequences of words.
-  * **Limitations of Simple Models:** A significant limitation identified was the simple model's inability to handle large-scale data due to "forgetting" information, as the number of possible next words increases dramatically with larger datasets.
-  * **Introduction to the Transformer Model:** The Transformer model was introduced as a revolutionary solution for large-scale sequential and language data, originating from the "Attention All You Need" research paper (around 2017). It's the foundation for many modern large language models (LLMs).
-  * **Transformer Functionality:** A Transformer is an AI model designed to understand and generate human languages. Its core mechanism is "attention," which allows it to prioritize important words and understand their relationships within a sequence, similar to human reading comprehension.
-  * **Encoder-Decoder Architecture:** The Transformer consists of an encoder (for deep analysis of input) and a decoder (for generating output sequences).
-  * **Encoder Block Components:** The encoder block includes input embedding, positional encoding (crucial for understanding word order as Transformers process words simultaneously), multi-head self-attention, add and normalization layers, and a feed-forward network.
-  * **Decoder Block Components:** The decoder block also uses output embedding and positional encoding. A key difference is "masked multi-head self-attention," which ensures the decoder generates words sequentially based only on previously generated words. It also includes add and normalization layers, encoder-decoder attention (where the encoder's context joins the decoder), and a feed-forward network, concluding with a Softmax activation function for output probabilities.
-  * **Self-Attention Mechanism:** This mechanism helps the model learn relationships between words in a sequence by identifying which words are important in a given context.
-  * **Softmax Activation Function:** Used in the final output layer, Softmax scales neuron values to a range of 0 to 1, aiding in error optimization and determining the probability of each word, allowing the decoder to choose the most likely next word.
-  * **Overall Transformer Summary:** The Transformer architecture involves tokenization and embedding, positional encoding, an encoder to understand the input sentence, a decoder to generate output word by word using input context, and a final output layer to predict the best word.
+  * **Introduction to Transformers:** Explained the architecture of transformers, including encoders and decoders, multi-head self-attention, normalization, and feed-forward networks. The process begins with input data undergoing embedding and positional encoding before multi-head self-attention.
+  * **Self-Attention Mechanism:** Detailed how self-attention allows each word in a sentence to focus on other words relevant to its meaning, using examples like "I buy a red car" and "the cat sat on the mat because it was time" to illustrate how models understand relationships between words (e.g., "it" referring to "cat").
+  * **QKV Vectors in Self-Attention:** Introduced Query (Q), Key (K), and Value (V) vectors, explaining their roles: Q ("what am I looking for"), K ("what do I offer"), and V ("what do I say if you pay attention to me"). These vectors help identify important word relationships.
+  * **Attention Score Calculation:** Explained that attention scores are calculated by the dot product of a Query (Q) vector and a Key (K) vector, indicating how much focus one word should give to another. The core formula for attention, Softmax(Q multiplied by KT / square root of D\_K) multiplied by V, was presented.
+  * **Word Embedding and QKV Production:** Demonstrated how words are initially represented as numerical vectors (word embedding) and then transformed into Q, K, and V vectors through linear neural layers, which are learned during training.
+  * **Scaling and Softmax for Stability:** Emphasized the importance of scaling by dividing by the square root of the dimension of K (DK) to prevent large or small attention scores from causing instability. Softmax is then applied to normalize these scaled values into probabilities.
+  * **Weighted Sum of Value Vectors for Contextual Output:** Described how attention weights are used to compute a weighted sum of Value (V) vectors, resulting in a "context-aware" output vector that captures the contextual understanding of a word within a sentence. This allows models to differentiate between multiple meanings of a word (e.g., "Apple" as a fruit vs. a company).
+  * **Practicality and Future Implications of Attention Mechanism:** Stressed that while practitioners don't directly use this attention process for building applications, understanding it is crucial for grasping future advancements in AI, such as AI agents, and adapting to evolving technology.
+  * **Contextual Understanding in Language Models:** Explained how transformers, unlike RNNs, can understand word meanings even when words are far apart in a sentence due to parallel processing, leading to faster operations.
+  * **Multi-Head Attention:** Briefly introduced multi-head attention as a mechanism that allows models to learn relationships based on various factors like grammar and word positioning, stating it would be explained in detail in an upcoming class.
 
-The notes also mention that future sessions will delve deeper into the mathematical workings of self-attention and multi-head attention.
+**Upcoming Sessions and Hands-on Activities:**
+
+  * AI Council will explain multi-head attention and the encoder-decoder in detail in the next class.
+  * The next session will include hands-on activities using GPT and other tools.
+  * AI Council will provide instructions to Souvik Roy on how to install and use the smallest LLaMA model (1.8GB) on their system, noting it requires at least 2.5 GB of storage space and 8 GB of RAM.
