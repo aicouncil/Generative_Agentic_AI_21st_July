@@ -1,0 +1,19 @@
+The provided document is a set of notes from a "Generative & Agentic AI - 22 July" session on August 12, 2025.
+
+Here's a summary of the key points:
+
+  * **Gemini API Key and Usage:** AI Council explained how to obtain a Gemini API key from AI Studio and use it in Python programs by importing the `Google.generativeAI` library. They also demonstrated how to define and use Gemini models like 1.5 flash, and how to list all available models.
+  * **Addressing User Practice Concerns:** Souvik Roy raised concerns about syntax differences between ChatGPT and Gemini, and the challenges of practicing with ChatGPT when Gemini is open source. AI Council offered to use both GPT and Gemini in demonstrations to accommodate users.
+  * **RAG Application Improvements:** AI Council discussed improving a previously created RAG (Retrieval Augmented Generation) application. The previous semantic search method simply returned entire sections of text without refinement.
+  * **Understanding RAG Components:** RAG was explained as a technique that enhances language models by retrieving relevant context. It consists of three parts: retrieve (fetching relevant documents based on user query), augment (feeding retrieved chunks as additional context to the language model), and generate (the language model generating an answer using both retrieved data and its own knowledge).
+  * **Libraries for RAG Implementation:** Key libraries for RAG implementation were outlined, including `PyPDF2` for reading PDFs and `OpenAIEmbeddings` from `langchain` for converting text into vectors. `FAISS` (Facebook AI Similarity Search) was recommended as an efficient open-source library for vector storage and similarity search, especially for large datasets.
+  * **Text Splitting and Chunking:** AI Council detailed the text splitting process, moving from header-based splitting to character-based splitting using `RecursiveCharacterTextSplitter` from `langchain.text_splitter`. Parameters like `chunk_size` (e.g., 300 characters) and `chunk_overlap` (e.g., 100 characters) were explained, with overlap helping to identify related information across chunks.
+  * **Rationale for Chunking:** AI Council explained that extensive coding for RAG applications is necessary for "on-premise" applications that require specific rules from an organization's documents. Chunking ensures that the LLM focuses on relevant sections, providing more accurate answers from specific documents, as LLMs may miss information in very long prompts.
+  * **Building a Complete RAG Workflow:** The process of creating a vector store (reading PDF data, splitting into chunks, converting to vectors using an embedding algorithm, and storing in `FAISS`) was described. The next step involves setting up a RAG Q\&A pipeline using the vector store's `as_retriever` method for similarity-based searches.
+  * **Utilizing LangChain for RAG:** AI Council demonstrated building a RAG application using LangChain, highlighting its pre-built libraries for functions like cosine similarity. LangChain offers various chat models (including OpenAI and Google's Gemini) and its "chains" combine the LLM and the retriever to generate outputs, specifically using the `retrieval Q&A` chain for question answering.
+  * **Switching Between LLM Models (GPT to Gemini):** The discussion covered how to switch the RAG application's underlying LLM from OpenAI's GPT to Google's Gemini by modifying the chat model and API key. AI Council provided a step-by-step demonstration, noting the flexibility of LangChain in accommodating different LLM providers.
+
+**Suggested next steps:**
+
+  * AI Council will create a user interface allowing users to choose output from Gemini or GPT in the upcoming class.
+  * AI Council will finish the current generative AI topic and then work on agentic AI this week.
