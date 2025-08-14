@@ -44,8 +44,8 @@ def setup_rag_qa(vectorstore):
 st.title("Customer Assistant Bot-")
 
 
-os.environ['OPENAI_API_KEY'] = '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'
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyAJoYFwz7rFEMHKSr59uHtP6ikF4TOp5tU'
+os.environ['OPENAI_API_KEY'] = ''
+os.environ['GOOGLE_API_KEY'] = ''
 
 @st.cache_resource
 def load_pipeline():
@@ -76,5 +76,6 @@ def hybrid_answer(qa_chain, query):
 if st.button("Get Answer") and query:
    result = hybrid_answer(qa_chain, query)
    st.write(result)
+
 
    
